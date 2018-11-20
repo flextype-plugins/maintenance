@@ -15,8 +15,12 @@ namespace Flextype;
 
 use Flextype\Component\{Event\Event, Http\Http, Registry\Registry};
 
+if (Admin::isAdminArea()) {
+    include 'maintenance-admin.php';
+}
+
 if (Registry::get('plugins.maintenance.activated')) {
-    Event::addListener('onPageBeforeRender', function () {
+    Event::addListener('onCurrentPageBeforeLoaded', function () {
         Http::setResponseStatus(503);
         Http::setRequestHeaders('Content-Type: text/html; charset=utf-8');
         Themes::view('maintenance/views/templates/maintenance')->display();

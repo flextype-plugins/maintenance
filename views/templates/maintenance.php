@@ -3,7 +3,7 @@
     use Flextype\Component\{Event\Event, Http\Http, Registry\Registry};
 ?>
 <!doctype html>
-<html lang="<?php echo Registry::get('site.locale'); ?>">
+<html lang="<?php echo Registry::get('system.locale'); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +29,7 @@
             -webkit-text-size-adjust: 100%;
                 -ms-text-size-adjust: 100%;
 
-            background: url(<?php echo Registry::get('plugins.maintenance.bg_img'); ?>) no-repeat center center fixed;
+            background: url(<?php echo Registry::get('plugins.maintenance.bg_img_url'); ?>) no-repeat center center fixed;
 
             -webkit-background-size: cover;
                -moz-background-size: cover;
