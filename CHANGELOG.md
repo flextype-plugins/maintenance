@@ -1,3 +1,6 @@
+# v1.1.1, 2018-11-21
+* UI and Translates fixes
+
 # v1.1.0, 2018-11-20
 * Updates for Flextype 0.7.0
 * Translates Updates

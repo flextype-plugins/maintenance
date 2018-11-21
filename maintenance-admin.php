@@ -69,7 +69,7 @@ class MaintenanceAdmin {
 
                 // Delete this data - DONT STORE IT!
                 Arr::delete($_POST, 'token');
-                Arr::delete($_POST, 'settings_site_save');
+                Arr::delete($_POST, 'maintenance_settings_save');
 
                 // Set activated true/false bool type
                 Arr::set($_POST, 'enabled', (Http::post('enabled') == '1' ? true : false));

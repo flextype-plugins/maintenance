@@ -1,5 +1,5 @@
 # Maintenance Plugin for [Flextype](http://flextype.org/)
-![version](https://img.shields.io/badge/version-1.1.0-brightgreen.svg?style=flat-square "Version")
+![version](https://img.shields.io/badge/version-1.1.1-brightgreen.svg?style=flat-square "Version")
 ![Flextype](https://img.shields.io/badge/Flextype-0.7.0-green.svg?style=flat-square "Flextype Version")
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/flextype-plugins/maintenance/blob/master/LICENSE.txt)
 
@@ -15,7 +15,7 @@ enabled: true # or `false` to disable the plugin
 activated: true # or `false` to deactivate the maintenance mode
 msg_title: "" # Title
 msg_description: "" # Description
-bg_img: "" # Background image
+bg_img_url: "" # Background image
 
 ```
 
