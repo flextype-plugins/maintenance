@@ -1,7 +1,7 @@
 maintenance: "Техническое обслуживание"
 maintenance_description: "Плагин технического обслуживания позволяет закрыть веб-сайт для обслуживания"
 maintenance_admin_heading: "Техническое обслуживание"
-maintenance_admin_menu: "Техническое обслуживание"
+maintenance_admin_menu: "Тех. обслуживание"
 maintenance_admin_settings: "Настройки"
 maintenance_admin_settings_activated: "Активирован"
 maintenance_admin_settings_msg_title: "Заголовок сообщения"

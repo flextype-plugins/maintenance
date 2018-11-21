@@ -103,4 +103,4 @@ class MaintenanceAdmin {
      }
 }
 
-Admin::addSidebarMenu('settings', 'maintenance', I18n::find('maintenance_admin_menu', Registry::get('system.locale')), Http::getBaseUrl() . '/admin/maintenance');
+Admin::addSidebarMenu('settings', 'maintenance', I18n::find('maintenance_admin_menu', Registry::get('system.locale')), Http::getBaseUrl() . '/admin/maintenance', ['class' => 'nav-link']);
