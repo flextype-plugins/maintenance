@@ -1,3 +1,6 @@
+# v1.2.0, 2018-12-13
+* Updates for Flextype 0.7.3 + Admin 0.3.0
+
 # v1.1.1, 2018-11-21
 * UI and Translates fixes
 

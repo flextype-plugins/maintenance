@@ -13,8 +13,9 @@ namespace Flextype;
  * file that was distributed with this source code.
  */
 
-use Flextype\Component\{Arr\Arr, Http\Http, Event\Event, Filesystem\Filesystem, Registry\Registry, Token\Token, I18n\I18n};
+use Flextype\Component\{Arr\Arr, Notification\Notification, Http\Http, Event\Event, Filesystem\Filesystem, Registry\Registry, Token\Token, I18n\I18n};
 use Symfony\Component\Yaml\Yaml;
+use function Flextype\Component\I18n\__;
 
 //
 // Add listner for onAdminArea event
@@ -22,6 +23,8 @@ use Symfony\Component\Yaml\Yaml;
 Event::addListener('onAdminArea', function () {
     MaintenanceAdmin::getInstance();
 });
+
+NavigationManager::addItem('settings', 'maintenance', '<i class="fas fa-cog"></i>' . __('maintenance_admin_menu', Registry::get('settings.locale')), Http::getBaseUrl() . '/admin/maintenance', ['class' => 'nav-link']);
 
 class MaintenanceAdmin {
     /**
@@ -62,20 +65,22 @@ class MaintenanceAdmin {
 
     protected static function getMaintenancePage()
     {
-        $maintenance_settings_save = Http::post('maintenance_settings_save');
 
-        if (isset($maintenance_settings_save)) {
+        $action = Http::post('action');
+
+        if (isset($action) && $action == 'save-form') {
             if (Token::check((Http::post('token')))) {
 
                 // Delete this data - DONT STORE IT!
                 Arr::delete($_POST, 'token');
-                Arr::delete($_POST, 'maintenance_settings_save');
+                Arr::delete($_POST, 'action');
 
                 // Set activated true/false bool type
                 Arr::set($_POST, 'enabled', (Http::post('enabled') == '1' ? true : false));
                 Arr::set($_POST, 'activated', (Http::post('activated') == '1' ? true : false));
 
                 if (Filesystem::setFileContent(PATH['plugins'] . '/maintenance/settings.yaml', Yaml::dump($_POST))) {
+                    Notification::set('success', __('maintenance_message_changes_saved'));
                     Http::redirect(Http::getBaseUrl().'/admin/maintenance');
                 }
 
@@ -102,5 +107,3 @@ class MaintenanceAdmin {
         return MaintenanceAdmin::$instance;
      }
 }
-
-Admin::addSidebarMenu('settings', 'maintenance', I18n::find('maintenance_admin_menu', Registry::get('system.locale')), Http::getBaseUrl() . '/admin/maintenance', ['class' => 'nav-link']);

@@ -3,7 +3,7 @@
     use Flextype\Component\{Event\Event, Http\Http, Registry\Registry};
 ?>
 <!doctype html>
-<html lang="<?php echo Registry::get('system.locale'); ?>">
+<html lang="<?php echo Registry::get('settings.locale'); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +12,7 @@
 
     <?php Event::dispatch('onThemeMeta'); ?>
 
-    <title><?php echo Registry::get('plugins.maintenance.msg_title'); ?> | <?php echo Registry::get('site.title'); ?></title>
+    <title><?php echo Registry::get('plugins.maintenance.msg_title'); ?> | <?php echo Registry::get('settings.title'); ?></title>
 
     <?php Event::dispatch('onThemeHeader'); ?>
 

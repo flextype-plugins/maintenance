@@ -15,6 +15,7 @@ namespace Flextype;
 
 use Flextype\Component\{Event\Event, Http\Http, Registry\Registry};
 
+
 if (Admin::isAdminArea()) {
     include 'maintenance-admin.php';
 }
