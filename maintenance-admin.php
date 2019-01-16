@@ -66,6 +66,8 @@ class MaintenanceAdmin {
     protected static function getMaintenancePage()
     {
 
+        Registry::set('sidebar_menu_item', 'maintenance');
+
         $action = Http::post('action');
 
         if (isset($action) && $action == 'save-form') {

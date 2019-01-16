@@ -1,5 +1,5 @@
 enabled: true
-activated: true
+activated: false
 msg_title: 'Maintenance mode is on!'
-msg_description: 'Website will be available soon'
+msg_description: 'Website will be available soon!'
 bg_img_url: 'https://drscdn.500px.org/photo/224178849/m%3D900/v2?user_id=688458&webp=true&sig=eb8fb384b2a66f8febbaf8d5b57a1e14e652f8a70e879df14e1b3369974d3332'
